@@ -22,10 +22,6 @@ task run(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
-task test{
-    useJUnit()
-}
-
 sourceSets{
     src{
         main{
