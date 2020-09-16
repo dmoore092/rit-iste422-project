@@ -18,9 +18,12 @@ dependencies {
 }   
 
 task run(type: JavaExec) {
-    test = 'src.test.java.*'
     main = 'src.main.java.*'
     classpath = sourceSets.main.runtimeClasspath
+}
+
+task test{
+    useJUnit()
 }
 
 sourceSets{
