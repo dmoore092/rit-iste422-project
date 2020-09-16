@@ -8,11 +8,6 @@ Create a top-level task that does all these things
 */
 apply plugin: 'java'
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_9
-    targetCompatibility = JavaVersion.VERSION_1_9
-}
-
 repositories {
     mavenCentral()
 }
@@ -23,6 +18,7 @@ dependencies {
 }   
 
 task run(type: JavaExec) {
+    test = 'src.test.java.*'
     main = 'src.main.java.*'
     classpath = sourceSets.main.runtimeClasspath
 }
