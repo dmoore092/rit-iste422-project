@@ -34,9 +34,9 @@ application {
     mainClassName = 'RunEdgeConvert'
 }
 
-task runApp(type:JavaExec) {
+task run(type:JavaExec) {
     useJUnit()
-    classpath = sourceSets.main.runtimeClasspath
 
+    classpath = sourceSets.main.runtimeClasspath
     main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "package.MyDefaultMain"
 }
