@@ -35,8 +35,7 @@ application {
 }
 
 task runApp(type:JavaExec) {
-    useJUnit()
-
     classpath = sourceSets.main.runtimeClasspath
+
     main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "package.MyDefaultMain"
 }
