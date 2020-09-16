@@ -34,7 +34,7 @@ application {
     mainClassName = 'RunEdgeConvert'
 }
 
-task execute(type:JavaExec) {
+task runApp(type:JavaExec) {
     useJUnit()
 
     classpath = sourceSets.main.runtimeClasspath
