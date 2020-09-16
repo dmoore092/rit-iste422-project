@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EdgeConnectorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-09-16T13:10:23" hostname="8n608058d0.rit.edu" time="0.003">
+<testsuite name="EdgeConnectorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-09-16T16:17:34" hostname="8n608058d0.rit.edu" time="0.005">
   <properties/>
   <testcase name="testGetEndPoint1" classname="EdgeConnectorTest" time="0.0"/>
   <testcase name="testGetEndPoint2" classname="EdgeConnectorTest" time="0.0"/>
