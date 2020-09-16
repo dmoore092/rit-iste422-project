@@ -35,6 +35,6 @@ application {
 }
 
 task execute(type:JavaExec) {
-   main = project.build.hasProperty("mainClass") ? getProperty("mainClass") : "NULL"
+   main = project.hasProperty("mainClass")
    classpath = sourceSets.main.runtimeClasspath
 }
