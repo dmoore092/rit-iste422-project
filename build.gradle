@@ -1,0 +1,43 @@
+/*
+Compile java
+Run tests
+Copy static resources
+Format test results
+Build a JAR
+Create a top-level task that does all these things
+*/
+apply plugin: 'java'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+    testCompile "junit:junit:4.11"
+}   
+
+task run(type: JavaExec) {
+    main = 'src.main.java.*'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+sourceSets{
+    src{
+        main{
+            java{
+                java.outputDir = file('build')
+            }
+        }
+        test{
+            java{
+                java.outputDir = file('build')
+            }
+        }
+    }
+}
