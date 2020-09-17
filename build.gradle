@@ -6,6 +6,15 @@
  * User Manual available at https://docs.gradle.org/6.6.1/userguide/tutorial_java_projects.html
  */
 
+/*
+    Compile java
+    Run tests
+    Copy static resources
+    Format test results
+    Build a JAR
+    Create a top-level task that does all these things
+*/
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -34,8 +43,25 @@ application {
     mainClassName = 'RunEdgeConvert'
 }
 
+task createJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+        	'Implementation-Version': '1.0',
+        	'Main-Class': 'RunEdgeConvert'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+// task package{
+//     javac -d ./build *.java
+// }
+
 task runApp(type:JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
     main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "package.MyDefaultMain"
 }
+
+//run with: gradle -PmainClass=RunEdgeConvert runApp
